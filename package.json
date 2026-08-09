@@ -1,0 +1,47 @@
+{
+  "name": "chouchou-supervisor",
+  "version": "0.2.0",
+  "description": "A Windows break reminder supervised by Chouchou the cat.",
+  "main": "src/main.js",
+  "author": "Chouchou Supervisor contributors",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "start": "electron .",
+    "dev": "electron . --dev",
+    "test": "node --test",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder --win nsis"
+  },
+  "devDependencies": {
+    "electron": "^37.2.6",
+    "electron-builder": "^26.0.12"
+  },
+  "build": {
+    "appId": "com.chouchou.supervisor",
+    "productName": "臭臭监督官",
+    "artifactName": "Chouchou-Supervisor-Setup-${version}.${ext}",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "src/**/*",
+      "assets/cat/chouchou.png",
+      "assets/icons/**/*",
+      "package.json",
+      "LICENSE",
+      "THIRD_PARTY_NOTICES.md"
+    ],
+    "win": {
+      "target": ["nsis"],
+      "icon": "assets/icons/app.ico"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "臭臭监督官"
+    }
+  }
+}

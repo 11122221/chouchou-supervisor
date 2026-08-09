@@ -1,0 +1,12 @@
+node_modules/
+dist/
+release/
+.cache/
+.tmp/
+*.log
+private-assets/
+assets/cat/*-green.png
+.DS_Store
+Thumbs.db
+pet-state.json
+
